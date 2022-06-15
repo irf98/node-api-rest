@@ -42,3 +42,98 @@ Correr la imagen:
 ```
 $ docker run --rm node-docker
 ```
+
+### Uso basico de los endpoints:
+
+Crear usuario:
+```
+POST request: /api/users/signup
+
+body:
+  
+  {
+    "email": "john@doe.com",
+    "password": "password"
+  }
+ 
+```
+
+Iniciar sesion:
+```
+POST request: /api/users/signin
+
+body:
+  
+  {
+    "email": "john@doe.com",
+    "password": "password"
+  }
+ ```
+
+Actualizar contraseña:
+```
+PUT request: /api/users/recovery
+
+body:
+  
+  {
+    "email": "john@doe.com",
+    "password": "newpassword"
+  }
+  
+  POST request /api/users/request-recovery (si el envio de email esta activado)
+  
+  body:
+  
+  {
+    "email": "john@doe.com"
+  }
+ ```
+ 
+Checkear si el token del usuario esta activo:
+```
+GET request: /api/users/protected
+
+ ```
+
+Subir imagen desde el dispositivo a Bucket S3:
+```
+POST request: /api/files/upload
+
+body:
+  
+  {
+    "file": test-file.txt
+  }
+ ```
+ 
+Descargar archivo del Bucket S3:
+```
+GET request: /api/files/download/:key
+
+param: ID del archivo en el Bucket
+ ```
+
+
+Subir imagen al Bucket S3 desde una URL:
+```
+POST request: /api/files/image-upload
+
+body:
+  
+  {
+    "url": "https://example-link.com/image-123"
+  }
+ ```
+
+
+Buscar imagenes en Unsplash:
+```
+GET request: /api/images?title=query
+
+query: resultado de busqueda (ejemplo: perros)
+
+ ```
+
+
+
