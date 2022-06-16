@@ -23,7 +23,7 @@ $ npm install
 
 A continuacion, asegurate de establecer las variables de entorno en un archivo `.env` y usar como guia el archivo `.env.template`
 
-Para las migraciones, correr el siguiente comando (recorda establecer le variable de entorno `DATABASE_URL`)
+Para las migraciones, correr el siguiente comando (recorda establecer la variable de entorno `DATABASE_URL`)
 ```
 $ npm run migrate up
 ```
